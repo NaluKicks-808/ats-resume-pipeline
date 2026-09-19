@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Sam Rivera, Resume</title>
+<style>
+  /* ONE source, two renders. resume.html is the designed page; resume.html#plain is the same page in black Helvetica
+     (body:target below). Everything is ONE column on purpose: a position-based resume parser reads across the page,
+     so anything side by side (a two-column footer, a name sharing a line with contact info) comes out interleaved.
+     The only things allowed to share a line are a role and its dates. render.sh enforces all of this. */
+  @page { size: Letter; margin: 0; }
+  :root { --ink:#0B1220; --slate:#475569; --mute:#64748B; --rule:#E2E8F0; --accent:#C2410C; }
+  * { box-sizing: border-box; }
+  html, body { margin:0; padding:0; }
+  body { font-family: "Avenir Next", "Helvetica Neue", Helvetica, Arial, sans-serif; font-size: 9.4pt; line-height: 1.3; color: var(--ink); -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  body:target { --ink:#111; --slate:#111; --mute:#111; --rule:#111; --accent:#111; font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; }
+  body:target .bar { display:none; }
+  .bar { height: 7px; background: linear-gradient(90deg, #C2410C 0%, #EA580C 55%, #F59E0B 100%); }
+  .page { padding: 0.36in 0.55in 0.3in; }
+  a { color: inherit; text-decoration: none; }
+  header { padding-bottom: 7px; border-bottom: 1.2px solid var(--ink); }
+  h1 { font-size: 24pt; line-height: 1; margin: 0; font-weight: 700; letter-spacing: -0.4px; }
+  h1 span { color: var(--accent); }
+  .tag { margin-top: 5px; font-size: 8.8pt; font-weight: 600; letter-spacing: 0.9px; text-transform: uppercase; color: var(--slate); }
+  .tag b { color: var(--accent); font-weight: 700; padding: 0 5px; }
+  .contact { margin-top: 4px; font-size: 8.7pt; line-height: 1.4; color: var(--slate); }
+  .contact .k { color: var(--ink); font-weight: 600; }
+  h2 { display:flex; align-items:center; gap:9px; font-size: 8.9pt; font-weight: 700; letter-spacing: 1.1px; text-transform: uppercase; color: var(--accent); margin: 10px 0 3px; }
+  h2::after { content:""; flex:1; height:1px; background: var(--rule); }
+  .row { display:flex; justify-content:space-between; align-items:baseline; margin-top: 5px; }
+  .org { font-weight: 700; }
+  .role { font-weight: 600; color: var(--slate); }
+  .date { white-space:nowrap; font-size: 8.6pt; color: var(--mute); padding-left: 10px; font-variant-numeric: tabular-nums; letter-spacing: 0.2px; }
+  ul { list-style:none; margin: 1.5px 0 0; padding: 0; }
+  li { padding-left: 11px; text-indent: -11px; margin: 0 0 1px; }
+  li::before { content:""; display:inline-block; width:3.6px; height:3.6px; margin: 0 6.4px 0 1px; vertical-align: 0.22em; background: var(--accent); border-radius: 1px; }
+  p { margin: 1px 0; }
+  .edu { color: var(--slate); }
+  .edu b { color: var(--ink); }
+  li b { font-weight: 700; }
+</style>
+</head>
+<body id="plain">
+<div class="bar"></div>
+<div class="page">
+
+<header>
+  <h1>Sam Alex <span>Rivera</span></h1>
+  <div class="tag">Software Engineer<b>|</b>Example Innovation Lab</div>
+  <div class="contact">
+    <div>Springfield, IL &nbsp;·&nbsp; <span class="k">555-201-4477</span> &nbsp;·&nbsp; <a href="mailto:sam.rivera@example.com"><span class="k">sam.rivera@example.com</span></a></div>
+    <div><a href="https://example.com/bio">example.com/bio</a> &nbsp;·&nbsp; <a href="https://www.linkedin.com/in/sam-rivera-example">linkedin.com/in/sam-rivera-example</a> &nbsp;·&nbsp; <a href="https://github.com/sam-rivera-dev">github.com/sam-rivera-dev</a></div>
+  </div>
+</header>
+
+<h2>Education</h2>
+<div class="row"><div><span class="org">Lincoln State University, College of Business</span> <span class="role">· Springfield, IL</span></div><div class="date">Expected Apr 2029</div></div>
+<p class="edu">Bachelor's candidate, Business Analytics · <b>GPA 3.80</b> · Transferred from Example College (Trustees' Scholar)</p>
+
+<h2>Experience</h2>
+<div class="row"><div><span class="org">Example Corp</span> · <span class="role">Software Engineer (independent contractor)</span></div><div class="date">Aug 2026 - Present</div></div>
+<ul>
+  <li>Join the development team's daily scrum and sprint cadence and work on live systems at a 25-year-old billing and operations platform for regional utility providers.</li>
+  <li>Built the company's internal knowledge assistant: a hosted API server with single sign-on, three permission roles, an audit trail and connectors for two chat clients, covered by 120 automated checks.</li>
+</ul>
+
+<div class="row"><div><span class="org">Rivera Ventures LLC</span> · <span class="role">Founder</span></div><div class="date">May 2026 - Present</div></div>
+<ul>
+  <li>Build and ship software systems for small businesses end to end: scheduling tools, knowledge bases, intake forms and websites.</li>
+  <li>Launched a 24/7 automated phone assistant for the first paying client, a salon, in July 2026: quoted services, checked live availability and captured bookings, with pricing computed on the server so the model never handled money.</li>
+  <li>Built an assistant proof of concept for a regional internet provider that reads the subscriber's line status before it speaks; measured real cost at about $0.07 a call minute and shipped a scanner that checks every transcript for data leaks.</li>
+</ul>
+
+<div class="row"><div><span class="org">Example Innovation Lab</span> · <span class="role">Deployed Software Engineer</span></div><div class="date">Sep 2026 - Present</div></div>
+<ul>
+  <li>Build production software systems for paying clients inside a limited-enrollment consulting studio at a state university.</li>
+  <li>Run the Example Corp engagement end to end and manage its team of two developers.</li>
+  <li>Sourced client projects for the lab, including Example Corp, and pitched them to the cohort.</li>
+  <li>Proposed and built a shared library of internal tools any member installs with one command.</li>
+</ul>
+
+<div class="row"><div><span class="org">Lincoln State University, College of Business</span> · <span class="role">Teaching Assistant, BUS 490</span></div><div class="date">Sep 2026 - Present</div></div>
+<ul>
+  <li>Support a course on applying software tools across business functions; troubleshoot students' tooling and access.</li>
+</ul>
+
+<div class="row"><div><span class="org">Example Training Center</span> · <span class="role">Program Mentor (part-time)</span></div><div class="date">Feb 2026 - Present</div></div>
+<ul>
+  <li>Coach 13 to 17 new trainee teams at a time across six regional offices, about 60 video sessions a month.</li>
+  <li>Built a three-database tracking system that turns each session's goals into dated 2-day and 5-day follow-up tasks.</li>
+</ul>
+
+<div class="row"><div><span class="org">Example Nonprofit Program</span> · <span class="role">Full-time volunteer coordinator</span></div><div class="date">Oct 2022 - Dec 2024</div></div>
+<ul>
+  <li>Organized volunteers to post videos consistently: about 60 million views a month, up 400%+ on the prior program.</li>
+  <li>Certified 40+ instructors through a train-the-trainer program.</li>
+  <li>Taught and led programs abroad for two years, finishing as Assistant Regional Director.</li>
+</ul>
+
+<div class="row"><div><span class="org">Example Lending Co-op</span> · <span class="role">Co-Founder &amp; CEO</span></div><div class="date">Oct 2020 - Sep 2022</div></div>
+<ul>
+  <li>Co-founded at 17 a peer-to-peer lending protocol on a public blockchain that let holders borrow against digital assets through smart-contract escrow: $5M+ in loans, about $8M peak total value locked, $15K in monthly revenue.</li>
+  <li>Raised $150K in 45 minutes in a membership-pass sale and about $100K from a 2,500-piece collection; led a team of four.</li>
+</ul>
+
+<h2>Projects</h2>
+<ul>
+  <li><b>Personal knowledge assistant</b> (Jul 2026 - Present): Built a personal knowledge base a language model maintains: 260 wiki pages, search-first retrieval that cut query cost about 5x, a hosted API server, about 2,500 automated tests.</li>
+  <li><b>Together Time</b> (Aug 2026): Shipped a real-time two-player web app for long-distance friends at example.com/together: 14 activities and a live photobooth on Fly.io and Supabase, 3,000+ unit tests.</li>
+</ul>
+
+<h2>Skills</h2>
+<p>Agentic development, AI coding assistants, prompt and context engineering, API servers, evals and test suites, Next.js, TypeScript, Node.js, PostgreSQL, Supabase, Redis, Vercel, Fly.io, Twilio, Git, GitHub, Notion</p>
+
+<h2>Awards</h2>
+<p>Business Journal Inno Under 25 (2022) · 1st of 40+, State University Great Ideas (2022) · Innovation grant (2026)</p>
+
+<h2>Languages</h2>
+<p>English (native) · Spanish (professional working proficiency)</p>
+
+</div>
+</body>
+</html>
